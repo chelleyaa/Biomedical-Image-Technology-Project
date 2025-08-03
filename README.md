@@ -1,29 +1,54 @@
 # Biomedical-Image-Technology-Project
-A MATLAB-based project that leverages the AlexNet Convolutional Neural Network (CNN) architecture to classify stages of Alzheimer's disease from brain MRI scans. This project aims to provide a robust tool for supporting early diagnosis and disease progression assessment.
+A project developed in MATLAB to classify stages of Alzheimer's disease using brain MRI images. This work leverages the AlexNet Convolutional Neural Network (CNN) architecture to support the early and accurate diagnosis of the disease.
 
 # About The Project
-Alzheimer's disease (AD) is a progressive neurodegenerative disorder characterized by subtle changes in brain structure. This project utilizes the power of deep learning, specifically the well-established AlexNet architecture, to automatically identify these patterns from brain MRI images.
+Alzheimer's disease is an irreversible, progressive brain disorder that slowly destroys memory and thinking skills. With the number of cases rising sharply in Indonesia, early detection is critical. While Magnetic Resonance Imaging (MRI) is a key tool for observing brain atrophy associated with Alzheimer's, manual analysis is time-consuming and requires expert radiologists.
 
-Developed entirely in the MATLAB environment, the program preprocesses raw MRI data and uses a fine-tuned AlexNet model to classify images into four distinct categories, providing a quantitative basis for clinical assessment. The goal is to create a system that can aid medical professionals in the early and accurate detection of Alzheimer's disease.
+
+This project addresses these challenges by developing an automated classification system using deep learning. The program is built in MATLAB R2024a and employs a Convolutional Neural Network (CNN) with the AlexNet architecture to classify brain MRI scans into four distinct stages of dementia. The goal is to provide a reliable, high-precision tool that can assist in the early diagnosis of Alzheimer's disease.
 
 Classification Categories
-The model is trained to differentiate between four stages of cognitive health  based on the Clinical Dementia Rating (CDR) scale:
-1. Normal (Non-demented) = 0
-2. Very Mild Dementia = 0.5
-3. Mild Dementia = 1
-4. Moderate Dementia = 2
+The model is trained to differentiate between four stages of cognitive health:
+1. Normal (Non-demented)
+2. Very Mild Dementia 
+3. Mild Dementia 
+4. Moderate Dementia
 
 # Key Features
-1. Proven Deep Learning Architecture: Employs the AlexNet CNN for end-to-end image classification.
-2. End-to-End MATLAB Implementation: The entire workflow, from data preprocessing to model training and evaluation, is built using MATLAB and its specialized toolboxes.
-3. Multi-Class Classification: Differentiates between four clinically relevant stages of Alzheimer's disease.
-4. Standardized Dataset: Built upon the publicly available and widely recognized OASIS brain MRI dataset.
-5. Transfer Learning: Utilizes a pre-trained AlexNet model to leverage learned features, improving training efficiency and performance.
+1. Deep Learning Classification: Utilizes a CNN with the AlexNet architecture, fine-tuned for the specific task of Alzheimer's diagnosis.
+2. MATLAB-Based Implementation: The entire workflow, from image processing to model training and evaluation, is developed within the MATLAB environment.
+3. Comprehensive Preprocessing: Implements a multi-step image enhancement pipeline, including grayscale conversion, median filtering, CLAHE for contrast enhancement, and Gaussian smoothing.
+4. Feature Extraction: Employs Histogram of Oriented Gradients (HOG) to capture the shape and structure of objects within the MRI images.
+5. Transfer Learning: Leverages a pre-trained AlexNet model and adapts its final layers for the 4-class classification problem, accelerating training and improving performance.
 
 # Dataset
 1. Name: Open Access Series of Imaging Studies (OASIS)
-2. Description: The project utilizes a cross-sectional MRI dataset from OASIS. This collection includes scans from 416 individuals aged 18 to 96.
-3. Cohort: A key subset of the data includes 100 individuals aged 60-96 with clinically diagnosed, very mild to moderate Alzheimer's disease.
+2. Source: Washington University Alzheimer's Disease Research Center (ADRC)
+3. Description: The project uses a cross-sectional T1-weighted MRI dataset from OASIS. The cohort includes 198 individuals aged 60 to 96, of whom 100 were diagnosed with very mild to moderate Alzheimer's disease.
+4. Ground Truth Labeling: The classification labels are based on the Clinical Dementia Rating (CDR) score:
+   a. CDR 0: Non-Demented
+   b. CDR 0.5: Very Mild Demented
+   c. CDR 1: Mild Demented
+   d. CDR 2: Moderate Demented
+
+# Methodology & Workflow
+The project follows a systematic pipeline for model development:
+1. Dataset Preparation: The OASIS MRI dataset is loaded. To handle class imbalance and prevent computational overload, the data for each of the four classes is balanced, with each class limited to 600 images.
+2. Image Preprocessing: Each image undergoes a series of enhancement steps:
+   a. Conversion to grayscale to reduce complexity.
+   b. Median filtering to remove salt-and-pepper noise.
+   c. Contrast Limited Adaptive Histogram Equalization (CLAHE) to improve local contrast.
+   d. Gaussian smoothing to reduce high-frequency noise.
+   e. Histogram of Oriented Gradients (HOG) feature extraction to capture structural information.
+3. Data Splitting: The processed dataset is randomly divided into 80% for training and 20% for validation.
+4. Model Configuration (Transfer Learning):
+   a. A pre-trained AlexNet model is loaded.
+   b. The final classification layers of AlexNet are replaced with new layers configured for the project's four output classes.
+
+5. Data Augmentation: To prevent overfitting and improve model generalization, the training data is augmented with random rotations and translations.
+
+6. Model Training: The fine-tuned AlexNet model is trained for 10 epochs using the SGDM (Stochastic Gradient Descent with Momentum) optimizer, a mini-batch size of 32, and an initial learning rate of 1e-4.
+
 
 # Result
 
