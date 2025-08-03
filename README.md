@@ -21,9 +21,9 @@ The model is trained to differentiate between four stages of cognitive health  b
 5. Transfer Learning: Utilizes a pre-trained AlexNet model to leverage learned features, improving training efficiency and performance.
 
 # Dataset
--Name: Open Access Series of Imaging Studies (OASIS)
--Description: The project utilizes a cross-sectional MRI dataset from OASIS. This collection includes scans from 416 individuals aged 18 to 96.
--Cohort: A key subset of the data includes 100 individuals aged 60-96 with clinically diagnosed, very mild to moderate Alzheimer's disease.
+1. Name: Open Access Series of Imaging Studies (OASIS)
+2. Description: The project utilizes a cross-sectional MRI dataset from OASIS. This collection includes scans from 416 individuals aged 18 to 96.
+3. Cohort: A key subset of the data includes 100 individuals aged 60-96 with clinically diagnosed, very mild to moderate Alzheimer's disease.
 
 # Result
 
