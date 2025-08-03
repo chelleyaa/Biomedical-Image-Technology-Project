@@ -56,3 +56,7 @@ The model is trained to differentiate between four stages of cognitive health  b
 -Description: The project utilizes a cross-sectional MRI dataset from OASIS. This collection includes scans from 416 individuals aged 18 to 96.
 -Cohort: A key subset of the data includes 100 individuals aged 60-96 with clinically diagnosed, very mild to moderate Alzheimer's disease.
 
+# Result
+
+![WhatsApp Image 2024-05-27 at 11 35 41](https://github.com/user-attachments/assets/b5fae313-3098-448f-8ee7-501c62af1721)
+
