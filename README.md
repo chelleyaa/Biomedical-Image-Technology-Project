@@ -27,5 +27,5 @@ The model is trained to differentiate between four stages of cognitive health  b
 
 # Result
 
-![WhatsApp Image 2024-05-27 at 11 35 41](https://github.com/user-attachments/assets/b5fae313-3098-448f-8ee7-501c62af1721)
+![WhatsApp Image 2024-05-27 at 11 35 41 (1)](https://github.com/user-attachments/assets/9c5114a3-71d9-4973-a756-3871b80fd083)
 
